@@ -1,65 +1,69 @@
 @import "tailwindcss";
 
 :root {
-  /* Mintlify Light Mode Specs */
+  /* Mintlify Light */
   --background: 0 0% 100%;
   --foreground: 222 47% 11%;
-
+  
   --card: 0 0% 100%;
   --card-foreground: 222 47% 11%;
-
+  
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
-
-  /* Mint Green Primary */
+  
   --primary: 158 64% 52%; 
   --primary-foreground: 0 0% 100%;
-
+  
   --secondary: 210 40% 96.1%;
   --secondary-foreground: 222 47% 11.2%;
-
+  
   --muted: 210 40% 96.1%;
   --muted-foreground: 215 16% 47%;
-
+  
   --accent: 210 40% 96.1%;
   --accent-foreground: 222 47% 11.2%;
-
+  
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
-
+  
   --border: 214 32% 91%;
   --input: 214 32% 91%;
   
   --ring: 158 64% 52%;
   --radius: 0.5rem;
+  
+  /* Mintlify Spacing & Sizing */
+  --fd-layout-width: 1400px; /* Constrain max width like Mintlify */
+  --fd-toc-width: 240px;
+  --fd-sidebar-width: 260px;
 }
 
 .dark {
-  /* Mintlify Dark Mode Specs */
+  /* Mintlify Dark */
   --background: 224 71% 4%;
   --foreground: 210 40% 98%;
-
+  
   --card: 224 71% 4%;
   --card-foreground: 210 40% 98%;
-
+  
   --popover: 224 71% 4%;
   --popover-foreground: 210 40% 98%;
-
+  
   --primary: 158 64% 52%;
   --primary-foreground: 222 47% 11.2%;
-
+  
   --secondary: 217 33% 17%;
   --secondary-foreground: 210 40% 98%;
-
+  
   --muted: 217 33% 17%;
   --muted-foreground: 215 20.2% 65.1%;
-
+  
   --accent: 217 33% 17%;
   --accent-foreground: 210 40% 98%;
-
+  
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
-
+  
   --border: 217 33% 17%;
   --input: 217 33% 17%;
   
@@ -92,4 +96,56 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 
+   EXACT REPLICA OVERRIDES 
+   Targeting Fumadocs internals to match Mintlify
+*/
+
+/* Sidebar Groups: Uppercase, bold, small */
+[data-sidebar-group="true"] > div:first-child {
+  text-transform: uppercase;
+  font-size: 0.75rem; /* text-xs */
+  font-weight: 700;   /* font-bold */
+  color: hsl(var(--muted-foreground));
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+/* Active Sidebar Item: Mint text + bg */
+[data-active='true'] {
+  color: hsl(var(--primary)) !important;
+  background-color: hsla(var(--primary) / 0.1) !important;
+  border-right: 2px solid hsl(var(--primary)); /* Mintlify sometimes uses border-left/right */
+}
+
+/* Navbar: Blurry and border */
+header {
+  background-color: hsla(var(--background) / 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid hsl(var(--border));
+}
+
+/* Content Width: Constrain prose */
+article {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Mintlify Typography Tweaks */
+h1, h2, h3, h4, h5, h6 {
+  letter-spacing: -0.025em; /* tracking-tight */
+  font-weight: 600;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2.25rem;
+}
+
+p {
+  line-height: 1.75; /* leading-7 */
+  color: hsl(var(--foreground));
 }

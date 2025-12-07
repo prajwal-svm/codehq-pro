@@ -7,7 +7,14 @@ export default function Layout({ children }: { children: ReactNode }) {
     <DocsLayout 
       tree={source.pageTree} 
       nav={{ 
-        title: 'CodeHQ Pro',
+        title: (
+          <div className="flex items-center gap-2">
+            <span className="font-semibold text-lg tracking-tight text-foreground">
+              CodeHQ <span className="text-primary font-bold">Pro</span>
+            </span>
+          </div>
+        ),
+        transparentMode: 'top', 
       }}
       links={[
         {
@@ -26,19 +33,15 @@ export default function Layout({ children }: { children: ReactNode }) {
           active: 'nested-url',
         },
         {
-          text: 'ML Design',
-          url: '/docs/ml-design',
-          active: 'nested-url',
-        },
-        {
           text: 'Behavioral',
           url: '/docs/behavioral',
           active: 'nested-url',
         },
       ]}
       sidebar={{
-        defaultOpenLevel: 0,
-        collapsible: true, 
+        defaultOpenLevel: 1, // Keep categories open to look like groups
+        collapsible: false,  // Mintlify sidebars are usually fixed
+        prefetch: true,
       }}
     >
       {children}
