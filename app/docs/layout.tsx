@@ -7,13 +7,7 @@ export default function Layout({ children }: { children: ReactNode }) {
     <DocsLayout 
       tree={source.pageTree} 
       nav={{ 
-        title: (
-          <span className="font-semibold text-lg tracking-tight">
-            CodeHQ <span className="text-primary font-bold">Pro</span>
-          </span>
-        ),
-        // Mintlify often has a transparent top nav that blurs
-        transparentMode: 'top', 
+        title: 'CodeHQ Pro',
       }}
       links={[
         {
@@ -43,9 +37,8 @@ export default function Layout({ children }: { children: ReactNode }) {
         },
       ]}
       sidebar={{
-        defaultOpenLevel: 1, // Open groups by default
-        collapsible: true,
-        prefetch: true,
+        defaultOpenLevel: 0,
+        collapsible: true, 
       }}
     >
       {children}

@@ -10,8 +10,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'CodeHQ Pro - Master Technical Interviews',
-  description: 'The ultimate resource for Data Structures & Algorithms, System Design, and Machine Learning Design interviews.',
+  title: 'CodeHQ Pro',
+  description: 'Technical Interview Preparation',
   icons: {
     icon: '/icon.svg',
   },
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
-      <body>
+      <body className="flex flex-col min-h-screen">
         <RootProvider 
             theme={{
                 enabled: true,

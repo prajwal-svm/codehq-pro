@@ -2,8 +2,8 @@
 
 :root {
   /* Mintlify Light Mode Specs */
-  --background: 0 0% 100%;       /* Pure White */
-  --foreground: 222 47% 11%;     /* High contrast text */
+  --background: 0 0% 100%;
+  --foreground: 222 47% 11%;
 
   --card: 0 0% 100%;
   --card-foreground: 222 47% 11%;
@@ -11,7 +11,7 @@
   --popover: 0 0% 100%;
   --popover-foreground: 222 47% 11%;
 
-  /* The Mint Green Primary: Bright Emerald */
+  /* Mint Green Primary */
   --primary: 158 64% 52%; 
   --primary-foreground: 0 0% 100%;
 
@@ -19,7 +19,7 @@
   --secondary-foreground: 222 47% 11.2%;
 
   --muted: 210 40% 96.1%;
-  --muted-foreground: 215 16% 47%; /* Slate-700 equivalent for soft text */
+  --muted-foreground: 215 16% 47%;
 
   --accent: 210 40% 96.1%;
   --accent-foreground: 222 47% 11.2%;
@@ -27,45 +27,40 @@
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 214 32% 91%;         /* Subtle thin border */
+  --border: 214 32% 91%;
   --input: 214 32% 91%;
   
   --ring: 158 64% 52%;
-  
-  --radius: 0.5rem;              /* 8px radius */
-  
-  /* Layout Specs */
-  --fd-layout-width: 1600px;
+  --radius: 0.5rem;
 }
 
 .dark {
   /* Mintlify Dark Mode Specs */
-  --background: 224 71% 4%;      /* Deep blue-gray, not black */
+  --background: 224 71% 4%;
   --foreground: 210 40% 98%;
 
-  --card: 224 71% 4%;            /* Matches bg or slightly lighter */
+  --card: 224 71% 4%;
   --card-foreground: 210 40% 98%;
 
   --popover: 224 71% 4%;
   --popover-foreground: 210 40% 98%;
 
-  /* Slightly dimmer mint for dark mode readability, or keep same */
   --primary: 158 64% 52%;
   --primary-foreground: 222 47% 11.2%;
 
-  --secondary: 217 33% 17%;      /* Secondary/Muted background */
+  --secondary: 217 33% 17%;
   --secondary-foreground: 210 40% 98%;
 
   --muted: 217 33% 17%;
   --muted-foreground: 215 20.2% 65.1%;
 
-  --accent: 217 33% 17%;         /* Sidebar active bg etc */
+  --accent: 217 33% 17%;
   --accent-foreground: 210 40% 98%;
 
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
 
-  --border: 217 33% 17%;         /* Dark mode border */
+  --border: 217 33% 17%;
   --input: 217 33% 17%;
   
   --ring: 158 64% 52%;
@@ -97,5 +92,4 @@ body {
   background-color: hsl(var(--background));
   color: hsl(var(--foreground));
   font-family: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  -webkit-font-smoothing: antialiased;
 }
