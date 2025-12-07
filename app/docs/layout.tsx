@@ -7,8 +7,19 @@ export default function Layout({ children }: { children: ReactNode }) {
     <DocsLayout 
       tree={source.pageTree} 
       nav={{ 
-        title: 'CodeHQ Pro',
+        // Mintlify has a minimal top nav, mostly for search and external links
+        // The title/logo often lives in the sidebar or top-left
+        title: (
+          <span className="font-bold text-xl tracking-tight">
+            CodeHQ <span className="text-primary">Pro</span>
+          </span>
+        ),
         transparentMode: 'top',
+      }}
+      sidebar={{
+        defaultOpenLevel: 1,
+        collapsible: false, // Keep it fixed like Mintlify
+        enabled: true,
       }}
       links={[
         {
@@ -27,10 +38,6 @@ export default function Layout({ children }: { children: ReactNode }) {
           active: 'nested-url',
         },
       ]}
-      sidebar={{
-        defaultOpenLevel: 0,
-        collapsible: false,
-      }}
     >
       {children}
     </DocsLayout>

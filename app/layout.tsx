@@ -11,8 +11,17 @@ const inter = Inter({
 export default function Layout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" className={inter.className} suppressHydrationWarning>
-      <body className="min-h-screen">
-        <RootProvider>{children}</RootProvider>
+      <body>
+        <RootProvider 
+            theme={{
+                enabled: true,
+                attribute: 'class',
+                defaultTheme: 'system',
+                enableSystem: true,
+            }}
+        >
+            {children}
+        </RootProvider>
       </body>
     </html>
   );
