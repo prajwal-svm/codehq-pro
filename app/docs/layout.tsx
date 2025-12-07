@@ -26,8 +26,18 @@ export default function Layout({ children }: { children: ReactNode }) {
           active: 'nested-url',
         },
         {
+          text: 'Low Level Design',
+          url: '/docs/lld',
+          active: 'nested-url',
+        },
+        {
           text: 'ML Design',
           url: '/docs/ml-design',
+          active: 'nested-url',
+        },
+        {
+          text: 'Behavioral',
+          url: '/docs/behavioral',
           active: 'nested-url',
         },
       ]}
