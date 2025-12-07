@@ -1,74 +1,96 @@
 @import "tailwindcss";
 
+/*
+  Mintlify Theme Variables (from user provided data)
+  Using HSL for better theming and compatibility.
+*/
+
 :root {
-  /* Light Mode (Clean White/Gray) */
-  --background: 0 0% 100%;
-  --foreground: 224 71.4% 4.1%;
+  /* Core Colors */
+  --primary: 160 90% 41%; /* #07c983 */
+  --primary-foreground: 0 0% 100%; /* White */
+
+  --background-light: 140 16% 96%; /* #f3f7f5 (from --gray-50) */
+  --background-dark: 180 17% 5%; /* #090d0d */
+
+  --foreground-light: 0 0% 0%; /* #000000 */
+  --foreground-dark: 0 0% 100%; /* #ffffff */
+
+  /* Grayscale Palette (from --gray-XXX variables) */
+  --gray-50: 140 16% 96%;   /* #f3f7f5 */
+  --gray-100: 140 17% 94%;  /* #eef2f0 */
+  --gray-200: 140 8% 88%;   /* #dfe3e0 */
+  --gray-300: 140 6% 82%;   /* #ced3d0 */
+  --gray-400: 140 3% 63%;   /* #9fa3a0 */
+  --gray-500: 150 2% 45%;   /* #707472 */
+  --gray-600: 150 2% 32%;   /* #505452 */
+  --gray-700: 150 3% 26%;   /* #3f4340 */
+  --gray-800: 150 5% 16%;   /* #262a27 */
+  --gray-900: 150 6% 10%;   /* #171b19 */
+  --gray-950: 150 20% 5%;   /* #0d1210 */
+
+  /* Semantic Colors - Light Theme Default */
+  --background: var(--background-light);
+  --foreground: var(--foreground-light);
   
-  --muted: 220 14.3% 95.9%;
-  --muted-foreground: 220 8.9% 46.1%;
+  --muted: var(--gray-100);
+  --muted-foreground: var(--gray-500);
   
-  --popover: 0 0% 100%;
-  --popover-foreground: 224 71.4% 4.1%;
+  --popover: var(--background-light);
+  --popover-foreground: var(--foreground-light);
   
-  --card: 0 0% 100%;
-  --card-foreground: 224 71.4% 4.1%;
+  --card: var(--background-light);
+  --card-foreground: var(--foreground-light);
   
-  --border: 220 13% 91%;
-  --input: 220 13% 91%;
+  --border: var(--gray-200);
+  --input: var(--gray-200);
   
-  /* Mintlify Primary Green #0FBA81 */
-  --primary: 160 84% 39%;
-  --primary-foreground: 0 0% 100%;
+  --secondary: var(--gray-100);
+  --secondary-foreground: var(--gray-900);
   
-  --secondary: 220 14.3% 95.9%;
-  --secondary-foreground: 220.9 39.3% 11%;
+  --accent: var(--gray-100);
+  --accent-foreground: var(--gray-900);
   
-  --accent: 220 14.3% 95.9%;
-  --accent-foreground: 220.9 39.3% 11%;
+  --destructive: 0 84.2% 60.2%; /* Red */
+  --destructive-foreground: var(--foreground-dark);
   
-  --destructive: 0 84.2% 60.2%;
-  --destructive-foreground: 210 40% 98%;
-  
-  --ring: 160 84% 39%;
-  --radius: 0.5rem;
+  --ring: var(--primary);
+  --radius: 0.5rem; /* Mintlify uses slightly rounded corners */
 
   /* Layout */
   --fd-layout-width: 1600px;
 }
 
 .dark {
-  /* Mintlify Dark Theme Exact Colors */
-  --background: 220 14% 5%;    /* #0B0C0E */
-  --foreground: 210 20% 98%;   /* Text White */
+  /* Semantic Colors - Dark Theme Overrides */
+  --background: var(--background-dark);
+  --foreground: var(--foreground-dark);
   
-  --muted: 225 10% 12%;        /* Muted elements */
-  --muted-foreground: 218 11% 65%; /* Gray Text */
+  --muted: var(--gray-900);
+  --muted-foreground: var(--gray-400);
   
-  --popover: 225 10% 8%;       /* Dropdowns #121316 */
-  --popover-foreground: 210 20% 98%;
+  --popover: var(--gray-950);
+  --popover-foreground: var(--foreground-dark);
   
-  --card: 225 10% 8%;          /* Cards #121316 */
-  --card-foreground: 210 20% 98%;
+  --card: var(--gray-950);
+  --card-foreground: var(--foreground-dark);
   
-  --border: 225 10% 16%;       /* Borders #25272D */
-  --input: 225 10% 16%;
+  --border: var(--gray-800);
+  --input: var(--gray-800);
   
-  --primary: 160 84% 39%;      /* #0FBA81 */
-  --primary-foreground: 0 0% 100%;
+  --secondary: var(--gray-900);
+  --secondary-foreground: var(--foreground-dark);
   
-  --secondary: 225 10% 12%;
-  --secondary-foreground: 210 20% 98%;
+  --accent: var(--gray-800);
+  --accent-foreground: var(--foreground-dark);
   
-  --accent: 225 10% 16%;
-  --accent-foreground: 210 20% 98%;
+  --destructive: 0 62.8% 30.6%; /* Darker Red */
+  --destructive-foreground: var(--foreground-dark);
   
-  --destructive: 0 62.8% 30.6%;
-  --destructive-foreground: 210 40% 98%;
-  
-  --ring: 160 84% 39%;
+  --ring: var(--primary);
 }
 
+/* Base styles for Fumadocs UI to pick up variables */
 @theme inline {
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
