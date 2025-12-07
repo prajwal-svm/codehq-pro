@@ -1,4 +1,4 @@
-import { DocsLayout } from 'fumadocs-ui/layouts/notebook';
+import { DocsLayout } from 'fumadocs-ui/layouts/docs';
 import type { ReactNode } from 'react';
 import { source } from '@/lib/source';
 
@@ -8,15 +8,16 @@ export default function Layout({ children }: { children: ReactNode }) {
       tree={source.pageTree} 
       nav={{ 
         title: (
-          <span className="font-bold text-xl tracking-tight">
-            CodeHQ <span className="text-primary">Pro</span>
+          <span className="font-semibold text-lg tracking-tight">
+            CodeHQ <span className="text-primary font-bold">Pro</span>
           </span>
         ),
-        transparentMode: 'none',
+        // Mintlify often has a transparent top nav that blurs
+        transparentMode: 'top', 
       }}
       links={[
         {
-          text: 'Data Structures',
+          text: 'DSA',
           url: '/docs/dsa',
           active: 'nested-url',
         },
@@ -26,7 +27,7 @@ export default function Layout({ children }: { children: ReactNode }) {
           active: 'nested-url',
         },
         {
-          text: 'Low Level Design',
+          text: 'Low Level',
           url: '/docs/lld',
           active: 'nested-url',
         },
@@ -42,7 +43,9 @@ export default function Layout({ children }: { children: ReactNode }) {
         },
       ]}
       sidebar={{
-        collapsible: false,
+        defaultOpenLevel: 1, // Open groups by default
+        collapsible: true,
+        prefetch: true,
       }}
     >
       {children}

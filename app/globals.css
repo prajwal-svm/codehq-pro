@@ -1,96 +1,76 @@
 @import "tailwindcss";
 
-/*
-  Mintlify Theme Variables (from user provided data)
-  Using HSL for better theming and compatibility.
-*/
-
 :root {
-  /* Core Colors */
-  --primary: 160 90% 41%; /* #07c983 */
-  --primary-foreground: 0 0% 100%; /* White */
+  /* Mintlify Light Mode Specs */
+  --background: 0 0% 100%;       /* Pure White */
+  --foreground: 222 47% 11%;     /* High contrast text */
 
-  --background-light: 140 16% 96%; /* #f3f7f5 (from --gray-50) */
-  --background-dark: 180 17% 5%; /* #090d0d */
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
 
-  --foreground-light: 0 0% 0%; /* #000000 */
-  --foreground-dark: 0 0% 100%; /* #ffffff */
+  --popover: 0 0% 100%;
+  --popover-foreground: 222 47% 11%;
 
-  /* Grayscale Palette (from --gray-XXX variables) */
-  --gray-50: 140 16% 96%;   /* #f3f7f5 */
-  --gray-100: 140 17% 94%;  /* #eef2f0 */
-  --gray-200: 140 8% 88%;   /* #dfe3e0 */
-  --gray-300: 140 6% 82%;   /* #ced3d0 */
-  --gray-400: 140 3% 63%;   /* #9fa3a0 */
-  --gray-500: 150 2% 45%;   /* #707472 */
-  --gray-600: 150 2% 32%;   /* #505452 */
-  --gray-700: 150 3% 26%;   /* #3f4340 */
-  --gray-800: 150 5% 16%;   /* #262a27 */
-  --gray-900: 150 6% 10%;   /* #171b19 */
-  --gray-950: 150 20% 5%;   /* #0d1210 */
+  /* The Mint Green Primary: Bright Emerald */
+  --primary: 158 64% 52%; 
+  --primary-foreground: 0 0% 100%;
 
-  /* Semantic Colors - Light Theme Default */
-  --background: var(--background-light);
-  --foreground: var(--foreground-light);
-  
-  --muted: var(--gray-100);
-  --muted-foreground: var(--gray-500);
-  
-  --popover: var(--background-light);
-  --popover-foreground: var(--foreground-light);
-  
-  --card: var(--background-light);
-  --card-foreground: var(--foreground-light);
-  
-  --border: var(--gray-200);
-  --input: var(--gray-200);
-  
-  --secondary: var(--gray-100);
-  --secondary-foreground: var(--gray-900);
-  
-  --accent: var(--gray-100);
-  --accent-foreground: var(--gray-900);
-  
-  --destructive: 0 84.2% 60.2%; /* Red */
-  --destructive-foreground: var(--foreground-dark);
-  
-  --ring: var(--primary);
-  --radius: 0.5rem; /* Mintlify uses slightly rounded corners */
+  --secondary: 210 40% 96.1%;
+  --secondary-foreground: 222 47% 11.2%;
 
-  /* Layout */
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215 16% 47%; /* Slate-700 equivalent for soft text */
+
+  --accent: 210 40% 96.1%;
+  --accent-foreground: 222 47% 11.2%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 214 32% 91%;         /* Subtle thin border */
+  --input: 214 32% 91%;
+  
+  --ring: 158 64% 52%;
+  
+  --radius: 0.5rem;              /* 8px radius */
+  
+  /* Layout Specs */
   --fd-layout-width: 1600px;
 }
 
 .dark {
-  /* Semantic Colors - Dark Theme Overrides */
-  --background: var(--background-dark);
-  --foreground: var(--foreground-dark);
+  /* Mintlify Dark Mode Specs */
+  --background: 224 71% 4%;      /* Deep blue-gray, not black */
+  --foreground: 210 40% 98%;
+
+  --card: 224 71% 4%;            /* Matches bg or slightly lighter */
+  --card-foreground: 210 40% 98%;
+
+  --popover: 224 71% 4%;
+  --popover-foreground: 210 40% 98%;
+
+  /* Slightly dimmer mint for dark mode readability, or keep same */
+  --primary: 158 64% 52%;
+  --primary-foreground: 222 47% 11.2%;
+
+  --secondary: 217 33% 17%;      /* Secondary/Muted background */
+  --secondary-foreground: 210 40% 98%;
+
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20.2% 65.1%;
+
+  --accent: 217 33% 17%;         /* Sidebar active bg etc */
+  --accent-foreground: 210 40% 98%;
+
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+
+  --border: 217 33% 17%;         /* Dark mode border */
+  --input: 217 33% 17%;
   
-  --muted: var(--gray-900);
-  --muted-foreground: var(--gray-400);
-  
-  --popover: var(--gray-950);
-  --popover-foreground: var(--foreground-dark);
-  
-  --card: var(--gray-950);
-  --card-foreground: var(--foreground-dark);
-  
-  --border: var(--gray-800);
-  --input: var(--gray-800);
-  
-  --secondary: var(--gray-900);
-  --secondary-foreground: var(--foreground-dark);
-  
-  --accent: var(--gray-800);
-  --accent-foreground: var(--foreground-dark);
-  
-  --destructive: 0 62.8% 30.6%; /* Darker Red */
-  --destructive-foreground: var(--foreground-dark);
-  
-  --ring: var(--primary);
+  --ring: 158 64% 52%;
 }
 
-/* Base styles for Fumadocs UI to pick up variables */
 @theme inline {
   --color-background: hsl(var(--background));
   --color-foreground: hsl(var(--foreground));
